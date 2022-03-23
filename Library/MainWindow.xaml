@@ -18,7 +18,7 @@
         </Grid.RowDefinitions>
         <Label x:Name="title"
                Style="{StaticResource Lable_Style}"
-               Content="Библиотека_1"
+               Content="Библиотека"
             >
         </Label>
     </Grid>
