@@ -4,6 +4,14 @@
              xmlns:local="clr-namespace:Library"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--Надписи-->
+        <Style TargetType="Label" x:Key="Lable_Style">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            </Style.Setters>
+        </Style>    
     </Application.Resources>
 </Application>
