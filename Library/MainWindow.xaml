@@ -21,7 +21,8 @@
         <Label x:Name="title"
                Grid.Row="0" Grid.Column="0"
                Style="{StaticResource Lable_Style}"
-               Content="Библиотека_1">
+               Content="Библиотека_1"
+            >
         </Label>
         
         <!--Основная часть-->
