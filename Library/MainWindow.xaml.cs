@@ -24,5 +24,16 @@ namespace Library
         {
             InitializeComponent();
         }
+
+        //Заглушка для проверки работы БД!
+        private void bt_auto_Click(object sender, RoutedEventArgs e)
+        {
+            var context = new Model.LibraryEntities();
+            var user = context.Users.FirstOrDefault(i => i.Login == "admin" && i.Password == "123");
+            if (user != null)
+            {
+                MessageBox.Show("Успешная авторизация!");
+            }
+        }
     }
 }

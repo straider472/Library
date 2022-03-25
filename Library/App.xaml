@@ -12,6 +12,21 @@
                 <Setter Property="FontStyle" Value="Italic"></Setter>
                 <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             </Style.Setters>
-        </Style>    
+        </Style>
+        
+        <!--Кнопки-->
+        <Style TargetType="Button" x:Key="Button_Style">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                <Setter Property="Width" Value="200"></Setter>
+                <Setter Property="Height" Value="50"></Setter>
+                <Setter Property="Background" Value="Beige"></Setter>
+                <Setter Property="Margin" Value="20"></Setter>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>
