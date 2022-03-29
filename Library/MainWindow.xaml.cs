@@ -34,6 +34,10 @@ namespace Library
             {
                 MessageBox.Show("Успешная авторизация!");
             }
+            else
+            {
+                MessageBox.Show("Такого пользователя нет!");
+            }
         }
     }
 }
