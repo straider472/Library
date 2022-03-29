@@ -16,10 +16,26 @@
             <RowDefinition></RowDefinition>
             <RowDefinition Height="100"></RowDefinition>
         </Grid.RowDefinitions>
+        
+        <!--Заголовок-->
         <Label x:Name="title"
+               Grid.Row="0" Grid.Column="0"
                Style="{StaticResource Lable_Style}"
-               Content="Библиотека_1"
-            >
+               Content="Библиотека_1">
         </Label>
+        
+        <!--Основная часть-->
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
+            <Button x:Name="bt_auto"
+                Style="{StaticResource Button_Style}"
+                Content="Войти" Click="bt_auto_Click">
+        </Button>
+        <Button x:Name="bt_regist"
+                Style="{StaticResource Button_Style}"
+                Content="Зарегистироваться">
+        </Button>
+        </StackPanel>
+        
+        <!--Заготовка для перехода к странице с информацией о системе-->
     </Grid>
 </Window>
