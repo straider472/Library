@@ -37,6 +37,7 @@ namespace Library
             else
             {
                 MessageBox.Show("Такого пользователя нет!");
+                MessageBox.Show("К сожалению!");
             }
         }
     }
