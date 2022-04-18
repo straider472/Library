@@ -38,6 +38,7 @@ namespace Library
             {
                 MessageBox.Show("Такого пользователя нет!");
                 MessageBox.Show("К сожалению!");
+                MessageBox.Show(":(");
             }
         }
     }
