@@ -13,7 +13,30 @@
                 <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             </Style.Setters>
         </Style>
-        
+        <!--Текстовые поля-->
+        <Style TargetType="TextBox" x:Key="TextBox_Style">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="Width" Value="250"></Setter>
+                <Setter Property="Height" Value="40"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            </Style.Setters>
+        </Style>
+        <!--PasswordBoxs-->
+        <Style TargetType="PasswordBox" x:Key="PasswordBox_Style">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="Width" Value="250"></Setter>
+                <Setter Property="Height" Value="40"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            </Style.Setters>
+        </Style>
         <!--Кнопки-->
         <Style TargetType="Button" x:Key="Button_Style">
             <Style.Setters>

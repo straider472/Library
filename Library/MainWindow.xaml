@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Library"
         mc:Ignorable="d"
-        Title="Library" Height="500" Width="700">
+        Title="Учет книг в библиотеке" Height="500" Width="700">
     <Grid>
         <!--Разметка гридами-->
         <Grid.ColumnDefinitions>
@@ -21,22 +21,39 @@
         <Label x:Name="title"
                Grid.Row="0" Grid.Column="0"
                Style="{StaticResource Lable_Style}"
+               FontSize="40"
                Content="Библиотека"
             >
         </Label>
         
         <!--Основная часть-->
-        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center">
-            <Button x:Name="bt_auto"
-                Style="{StaticResource Button_Style}"
-                Content="Войти" Click="bt_auto_Click">
-        </Button>
-        <Button x:Name="bt_regist"
-                Style="{StaticResource Button_Style}"
-                Content="Зарегистироваться">
-        </Button>
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Orientation="Horizontal">
+            <StackPanel Orientation="Vertical">
+                <Label x:Name="lab_login"
+               Style="{StaticResource Lable_Style}"
+               FontSize="30"
+               Content="Введите логин">
+                </Label>
+                <Label x:Name="lab_password"
+               Style="{StaticResource Lable_Style}"
+               FontSize="30"
+               Content="Введите пароль">
+                </Label>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBox x:Name="tb_login"
+                         Style="{StaticResource TextBox_Style}"
+                         >
+                </TextBox>
+                <PasswordBox x:Name="pb_password"
+                             Style="{StaticResource PasswordBox_Style}"></PasswordBox>
+            </StackPanel>
         </StackPanel>
         
         <!--Заготовка для перехода к странице с информацией о системе-->
+        <Button x:Name="bt_auto" Grid.Row="2"
+                Style="{StaticResource Button_Style}"
+                Content="Войти" Click="bt_auto_Click">
+        </Button>
     </Grid>
 </Window>
