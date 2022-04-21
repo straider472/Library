@@ -45,6 +45,8 @@ namespace Library
                 if (user != null)
                 {
                     MessageBox.Show("Успешная авторизация!");
+                    new Windows.MainForm().Show();
+                    this.Close();
                 }
                 else
                 {
