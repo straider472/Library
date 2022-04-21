@@ -25,21 +25,34 @@ namespace Library
             InitializeComponent();
         }
 
-        //Заглушка для проверки работы БД!
-        private void bt_auto_Click(object sender, RoutedEventArgs e)
+        //Авторизация
+        private void Bt_Auto_Click(object sender, RoutedEventArgs e)
         {
-            var context = new Model.LibraryEntities();
-            var user = context.Users.FirstOrDefault(i => i.Login == "admi" && i.Password == "123");
-            if (user != null)
-            {
-                MessageBox.Show("Успешная авторизация!");
-            }
+            // данные с текстовых полей
+            string login = tb_login.Text.Trim();
+            string password = pb_password.Password.Trim();
+            // строка для сбора ошибок
+            var errors = new StringBuilder();
+            //Обработка исключений
+            if (login.Length == 0 || password.Length == 0) errors.Append("Заполните все поля!");
+
+            if (errors.Length > 0) MessageBox.Show(errors.ToString());
             else
             {
-                MessageBox.Show("Такого пользователя нет!");
-                MessageBox.Show("К сожалению!");
-                //Desktop
+                //Запрос к БД
+                var user = Model.LibraryEntities.GetContext().Users.FirstOrDefault(i =>
+                i.Login == login && i.Password == password);
+                if (user != null)
+                {
+                    MessageBox.Show("Успешная авторизация!");
+                }
+                else
+                {
+                    MessageBox.Show("Такого пользователя нет!");
+                }
             }
         }
+
+        //Desktop
     }
 }

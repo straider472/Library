@@ -27,17 +27,19 @@
         </Label>
         
         <!--Основная часть-->
-        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" Orientation="Horizontal">
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
                 <Label x:Name="lab_login"
                Style="{StaticResource Lable_Style}"
                FontSize="30"
-               Content="Введите логин">
+               Content="Введите логин"
+               Margin="0 0 50 0">
                 </Label>
                 <Label x:Name="lab_password"
                Style="{StaticResource Lable_Style}"
                FontSize="30"
-               Content="Введите пароль">
+               Content="Введите пароль"
+               Margin="0 20 50 0">
                 </Label>
             </StackPanel>
             <StackPanel Orientation="Vertical">
@@ -46,14 +48,16 @@
                          >
                 </TextBox>
                 <PasswordBox x:Name="pb_password"
-                             Style="{StaticResource PasswordBox_Style}"></PasswordBox>
+                             Style="{StaticResource PasswordBox_Style}"
+                             Margin="0 20 0 0">
+                </PasswordBox>
             </StackPanel>
         </StackPanel>
         
         <!--Заготовка для перехода к странице с информацией о системе-->
         <Button x:Name="bt_auto" Grid.Row="2"
                 Style="{StaticResource Button_Style}"
-                Content="Войти" Click="bt_auto_Click">
+                Content="Войти" Click="Bt_Auto_Click">
         </Button>
     </Grid>
 </Window>
