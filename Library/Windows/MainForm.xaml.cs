@@ -24,6 +24,9 @@ namespace Library.Windows
             InitializeComponent();
             //Вывод данных о типе пользователя
             tb_current_user.Text = $"Вы вошли как {App.current_user.Types_Users.Name.Trim()}";
+
+            //Заглушка для навигации по фрейму
+            
         }
     }
 }
