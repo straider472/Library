@@ -52,6 +52,7 @@
           <Property Name="Count_Books" Type="int" Nullable="false" />
           <Property Name="Status" Type="bit" Nullable="false" />
           <Property Name="Id_User" Type="int" Nullable="false" />
+          <Property Name="Id_Reader" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Orders_Lines">
           <Key>
@@ -59,7 +60,6 @@
           </Key>
           <Property Name="Id_Order_Lines" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Id_Book" Type="int" Nullable="false" />
-          <Property Name="Id_Reader" Type="int" Nullable="false" />
           <Property Name="Id_Order" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Publications">
@@ -184,14 +184,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Orders_Lines_Readers">
+        <Association Name="FK_Orders_Readers">
           <End Role="Readers" Type="Self.Readers" Multiplicity="1" />
-          <End Role="Orders_Lines" Type="Self.Orders_Lines" Multiplicity="*" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Readers">
               <PropertyRef Name="Id_Reader" />
             </Principal>
-            <Dependent Role="Orders_Lines">
+            <Dependent Role="Orders">
               <PropertyRef Name="Id_Reader" />
             </Dependent>
           </ReferentialConstraint>
@@ -256,9 +256,9 @@
             <End Role="Orders" EntitySet="Orders" />
             <End Role="Orders_Lines" EntitySet="Orders_Lines" />
           </AssociationSet>
-          <AssociationSet Name="FK_Orders_Lines_Readers" Association="Self.FK_Orders_Lines_Readers">
+          <AssociationSet Name="FK_Orders_Readers" Association="Self.FK_Orders_Readers">
             <End Role="Readers" EntitySet="Readers" />
-            <End Role="Orders_Lines" EntitySet="Orders_Lines" />
+            <End Role="Orders" EntitySet="Orders" />
           </AssociationSet>
           <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
             <End Role="Users" EntitySet="Users" />
@@ -319,7 +319,9 @@
           <Property Name="Count_Books" Type="Int32" Nullable="false" />
           <Property Name="Status" Type="Boolean" Nullable="false" />
           <Property Name="Id_User" Type="Int32" Nullable="false" />
+          <Property Name="Id_Reader" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Orders_Lines" Relationship="Self.FK_Orders_Lines_Orders" FromRole="Orders" ToRole="Orders_Lines" />
+          <NavigationProperty Name="Readers" Relationship="Self.FK_Orders_Readers" FromRole="Orders" ToRole="Readers" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Orders_Users" FromRole="Orders" ToRole="Users" />
         </EntityType>
         <EntityType Name="Orders_Lines">
@@ -328,11 +330,9 @@
           </Key>
           <Property Name="Id_Order_Lines" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_Book" Type="Int32" Nullable="false" />
-          <Property Name="Id_Reader" Type="Int32" Nullable="false" />
           <Property Name="Id_Order" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Orders_Lines_Books" FromRole="Orders_Lines" ToRole="Books" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Lines_Orders" FromRole="Orders_Lines" ToRole="Orders" />
-          <NavigationProperty Name="Readers" Relationship="Self.FK_Orders_Lines_Readers" FromRole="Orders_Lines" ToRole="Readers" />
         </EntityType>
         <EntityType Name="Publications">
           <Key>
@@ -353,7 +353,7 @@
           <Property Name="Last_Name" Type="String" MaxLength="30" FixedLength="true" Unicode="true" />
           <Property Name="Number" Type="String" MaxLength="12" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="Mail" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="Orders_Lines" Relationship="Self.FK_Orders_Lines_Readers" FromRole="Readers" ToRole="Orders_Lines" />
+          <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Readers" FromRole="Readers" ToRole="Orders" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -437,6 +437,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Orders_Readers">
+          <End Role="Readers" Type="Self.Readers" Multiplicity="1" />
+          <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Readers">
+              <PropertyRef Name="Id_Reader" />
+            </Principal>
+            <Dependent Role="Orders">
+              <PropertyRef Name="Id_Reader" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Orders_Users">
           <End Role="Users" Type="Self.Users" Multiplicity="1" />
           <End Role="Orders" Type="Self.Orders" Multiplicity="*" />
@@ -446,18 +458,6 @@
             </Principal>
             <Dependent Role="Orders">
               <PropertyRef Name="Id_User" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Orders_Lines_Readers">
-          <End Role="Readers" Type="Self.Readers" Multiplicity="1" />
-          <End Role="Orders_Lines" Type="Self.Orders_Lines" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Readers">
-              <PropertyRef Name="Id_Reader" />
-            </Principal>
-            <Dependent Role="Orders_Lines">
-              <PropertyRef Name="Id_Reader" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -504,13 +504,13 @@
             <End Role="Orders" EntitySet="Orders" />
             <End Role="Orders_Lines" EntitySet="Orders_Lines" />
           </AssociationSet>
+          <AssociationSet Name="FK_Orders_Readers" Association="Self.FK_Orders_Readers">
+            <End Role="Readers" EntitySet="Readers" />
+            <End Role="Orders" EntitySet="Orders" />
+          </AssociationSet>
           <AssociationSet Name="FK_Orders_Users" Association="Self.FK_Orders_Users">
             <End Role="Users" EntitySet="Users" />
             <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Orders_Lines_Readers" Association="Self.FK_Orders_Lines_Readers">
-            <End Role="Readers" EntitySet="Readers" />
-            <End Role="Orders_Lines" EntitySet="Orders_Lines" />
           </AssociationSet>
           <AssociationSet Name="FK_Users_Types_Users" Association="Self.FK_Users_Types_Users">
             <End Role="Types_Users" EntitySet="Types_Users" />
@@ -568,6 +568,7 @@
                 <ScalarProperty Name="Count_Books" ColumnName="Count_Books" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+                <ScalarProperty Name="Id_Reader" ColumnName="Id_Reader" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -576,7 +577,6 @@
               <MappingFragment StoreEntitySet="Orders_Lines">
                 <ScalarProperty Name="Id_Order_Lines" ColumnName="Id_Order_Lines" />
                 <ScalarProperty Name="Id_Book" ColumnName="Id_Book" />
-                <ScalarProperty Name="Id_Reader" ColumnName="Id_Reader" />
                 <ScalarProperty Name="Id_Order" ColumnName="Id_Order" />
               </MappingFragment>
             </EntityTypeMapping>

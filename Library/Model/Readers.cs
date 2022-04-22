@@ -17,7 +17,7 @@ namespace Library.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Readers()
         {
-            this.Orders_Lines = new HashSet<Orders_Lines>();
+            this.Orders = new HashSet<Orders>();
         }
     
         public int Id_Reader { get; set; }
@@ -28,6 +28,6 @@ namespace Library.Model
         public string Mail { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Orders_Lines> Orders_Lines { get; set; }
+        public virtual ICollection<Orders> Orders { get; set; }
     }
 }

@@ -26,9 +26,11 @@ namespace Library.Model
         public int Count_Books { get; set; }
         public bool Status { get; set; }
         public int Id_User { get; set; }
+        public int Id_Reader { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders_Lines> Orders_Lines { get; set; }
+        public virtual Readers Readers { get; set; }
         public virtual Users Users { get; set; }
     }
 }

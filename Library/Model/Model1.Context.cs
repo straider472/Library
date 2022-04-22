@@ -19,14 +19,13 @@ namespace Library.Model
             : base("name=LibraryEntities")
         {
         }
-        
-        public static LibraryEntities context = new LibraryEntities();
 
+        public static LibraryEntities context;
+        
         public static LibraryEntities GetContext()
         {
             return context = context == null ? new LibraryEntities() : context;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

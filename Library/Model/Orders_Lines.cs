@@ -16,11 +16,9 @@ namespace Library.Model
     {
         public int Id_Order_Lines { get; set; }
         public int Id_Book { get; set; }
-        public int Id_Reader { get; set; }
         public int Id_Order { get; set; }
     
         public virtual Books Books { get; set; }
         public virtual Orders Orders { get; set; }
-        public virtual Readers Readers { get; set; }
     }
 }
