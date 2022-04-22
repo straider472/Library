@@ -26,7 +26,7 @@ namespace Library.Windows
             tb_current_user.Text = $"Вы вошли как {App.current_user.Types_Users.Name.Trim()}";
 
             //Заглушка для навигации по фрейму
-            
+            main_frame.Navigate(new Pages.Orders());
         }
     }
 }

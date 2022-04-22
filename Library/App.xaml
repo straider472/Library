@@ -73,5 +73,26 @@
                 <Setter Property="Background" Value="Beige"></Setter>
             </Style.Setters>
         </Style>
+        <!--Заголовки таблицы-->
+        <Style TargetType="DataGridColumnHeader" x:Key="DataGridColumnHeader_Style">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+            </Style.Setters>
+        </Style>
+        <!--Кнопки в таблице-->
+        <Style TargetType="Button" x:Key="Button_Style_Data_Grid">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="FontSize" Value="14"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                <Setter Property="Width" Value="100"></Setter>
+                <Setter Property="Height" Value="30"></Setter>
+                <Setter Property="Background" Value="Beige"></Setter>
+                <Setter Property="Margin" Value="0"></Setter>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>
