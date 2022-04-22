@@ -7,6 +7,40 @@
         mc:Ignorable="d"
         Title="Учет книг в библиотеке" Height="600" Width="1000">
     <Grid>
+        <!--Верстка-->
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="400*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+        </Grid.RowDefinitions>
         
+        <!--Навигация-->
+        <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
+            <Button x:Name="bt_orders"
+                Style="{StaticResource Button_Style}"
+                Content="Заказы"/>
+            <Button x:Name="bt_readers"
+                Style="{StaticResource Button_Style}"
+                Content="Читатели"/>
+            <Button x:Name="bt_books"
+                Style="{StaticResource Button_Style}"
+                Content="Книги"/>
+            <Button x:Name="bt_publications"
+                Style="{StaticResource Button_Style}"
+                Content="Издания"/>
+        </StackPanel>
+        
+        <!--Фрейм для страниц-->
+        <Frame x:Name="main_frame" Grid.Row="1"></Frame>
+        
+        <!--Техническая информация-->
+        <TextBlock x:Name="tb_current_user" Grid.Row="2"
+                       Style="{StaticResource TextBlock_Style}"
+                       FontSize="20"
+                       Width="Auto">
+        </TextBlock>
     </Grid>
 </Window>

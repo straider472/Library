@@ -10,20 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Library.Windows
+namespace Library
 {
     /// <summary>
-    /// Логика взаимодействия для MainForm.xaml
+    /// Логика взаимодействия для Orders.xaml
     /// </summary>
-    public partial class MainForm : Window
+    public partial class Orders : Page
     {
-        public MainForm()
+        public Orders()
         {
             InitializeComponent();
-            //Вывод данных о типе пользователя
-            tb_current_user.Text = $"Вы вошли как {App.current_user.Types_Users.Name.Trim()}";
+            //Привязка данных
+            dt_orders.ItemsSource = Model.LibraryEntities.GetContext().Orders.ToList();
+            var order = new Model.Orders();
+            var order_lines = new Model.Orders_Lines();
+            
         }
     }
 }

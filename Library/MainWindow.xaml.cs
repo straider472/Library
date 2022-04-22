@@ -44,7 +44,10 @@ namespace Library
                 i.Login == login && i.Password == password);
                 if (user != null)
                 {
-                    MessageBox.Show("Успешная авторизация!");
+                    //сохраняем данные о пользователе в сессии
+                    App.current_user = user;
+                    //производим авторизацию
+                    MessageBox.Show($"Успешная авторизация!\nДобро пожаловать, {user.First_Name.Trim()}!");
                     new Windows.MainForm().Show();
                     this.Close();
                 }
