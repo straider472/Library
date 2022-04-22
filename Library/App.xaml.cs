@@ -13,5 +13,7 @@ namespace Library
     /// </summary>
     public partial class App : Application
     {
+        // сессия текущего пользоваля
+        public static Model.Users current_user;
     }
 }

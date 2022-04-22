@@ -25,6 +25,18 @@
                 <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             </Style.Setters>
         </Style>
+        <!--Текстовые блоки-->
+        <Style TargetType="TextBlock" x:Key="TextBlock_Style">
+            <Style.Setters>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="FontStyle" Value="Italic"></Setter>
+                <Setter Property="Width" Value="250"></Setter>
+                <Setter Property="Height" Value="40"></Setter>
+                <Setter Property="FontSize" Value="30"></Setter>
+                <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+            </Style.Setters>
+        </Style>
         <!--PasswordBoxs-->
         <Style TargetType="PasswordBox" x:Key="PasswordBox_Style">
             <Style.Setters>
@@ -49,6 +61,16 @@
                 <Setter Property="Height" Value="50"></Setter>
                 <Setter Property="Background" Value="Beige"></Setter>
                 <Setter Property="Margin" Value="20"></Setter>
+            </Style.Setters>
+        </Style>
+        <!--Таблицы-->
+        <Style TargetType="DataGrid" x:Key="DataGrid_Style">
+            <Style.Setters>
+                <Setter Property="CanUserAddRows" Value="False"></Setter>
+                <Setter Property="CanUserDeleteRows" Value="False"></Setter>
+                <Setter Property="AutoGenerateColumns" Value="False"></Setter>
+                <Setter Property="FontFamily" Value="Times new Roman"></Setter>
+                <Setter Property="Background" Value="Beige"></Setter>
             </Style.Setters>
         </Style>
     </Application.Resources>

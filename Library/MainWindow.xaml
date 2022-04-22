@@ -27,7 +27,7 @@
         </Label>
         
         <!--Основная часть-->
-        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Top" HorizontalAlignment="Center" Orientation="Horizontal">
+        <StackPanel Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal">
             <StackPanel Orientation="Vertical">
                 <Label x:Name="lab_login"
                Style="{StaticResource Lable_Style}"
