@@ -34,5 +34,21 @@ namespace Library.Pages
             var window = new Windows.More_Info_About_Order(order);
             window.ShowDialog();
         }
+
+        //Удаление заказа
+        private void Delete_Order(object sender, RoutedEventArgs e)
+        {
+            var order = dt_orders.SelectedItem as Model.Orders;
+            if (MessageBox.Show("Вы точно хотите удалить?", "", MessageBoxButton.YesNo, MessageBoxImage.Warning)
+                == MessageBoxResult.Yes)
+            {
+                var delete_order = Model.LibraryEntities.GetContext().Orders.FirstOrDefault(i =>
+                                    i.Id_Order == order.Id_Order);
+                Model.LibraryEntities.GetContext().Orders.Remove(delete_order);
+                Model.LibraryEntities.GetContext().SaveChanges();
+                MessageBox.Show("Заказ был успешно удалён!");
+            }
+            dt_orders.ItemsSource = Model.LibraryEntities.GetContext().Orders.ToList();
+        }
     }
 }
