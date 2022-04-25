@@ -35,5 +35,20 @@ namespace Library.Model
         public virtual ICollection<Orders_Lines> Orders_Lines { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Authors> Authors { get; set; }
+        public string Current_Authors
+        {
+            get
+            {
+                string s = "";
+                foreach (var item in Authors)
+                {
+                    string otchestvo = item.Last_Name != null ? item.Last_Name.Trim() : "";
+                    s += $"{item.First_Name.Trim()} {otchestvo} {item.Middle_Name.Trim()} ";
+
+                }
+                return s;
+            }
+            set { }
+        }
     }
 }

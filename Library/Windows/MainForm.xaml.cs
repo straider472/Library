@@ -28,5 +28,11 @@ namespace Library.Windows
             //Заглушка для навигации по фрейму
             main_frame.Navigate(new Pages.Orders());
         }
+
+        //Переход к странице с книгами
+        private void Go_To_Books(object sender, RoutedEventArgs e)
+        {
+            main_frame.Navigate(new Pages.Books());
+        }
     }
 }

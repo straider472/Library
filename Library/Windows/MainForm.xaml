@@ -27,7 +27,8 @@
                 Content="Читатели"/>
             <Button x:Name="bt_books"
                 Style="{StaticResource Button_Style}"
-                Content="Книги"/>
+                Content="Книги"
+                Click="Go_To_Books"/>
             <Button x:Name="bt_publications"
                 Style="{StaticResource Button_Style}"
                 Content="Издания"/>

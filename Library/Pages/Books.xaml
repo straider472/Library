@@ -1,0 +1,62 @@
+﻿<Page x:Class="Library.Pages.Books"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Library.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="1000"
+      Title="">
+
+    <Grid>
+        <!---Верстка страницы-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="350*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--Строка поиска-->
+        
+        
+        <!--Таблица книг-->
+        <DataGrid x:Name="dt_books" Grid.Row="1"
+                  Style="{StaticResource DataGrid_Style}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Название" Binding="{Binding Name}"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
+                <DataGridTextColumn Header="Жанр" Binding="{Binding Genres.Name}"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
+                <DataGridTextColumn Header="Автор" Binding="{Binding Current_Authors}"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
+                <DataGridTextColumn Header="Издательство" Binding="{Binding Publications.Name}"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Кол-во страниц" Binding="{Binding Count_Pages}"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
+                <DataGridTextColumn Header="В наличии" Binding="{Binding Status}"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
+                <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="bt_delete"
+                                    Style="{StaticResource Button_Style_Data_Grid}"
+                                    Width="30" Height="30"
+                                    >
+                                <Button.Content>
+                                    <Image Source="/Resources/trash_basket.png"></Image>
+                                </Button.Content>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <!---Кнопки для управления-->
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            
+        </StackPanel>
+    </Grid>
+</Page>
