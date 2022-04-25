@@ -33,7 +33,7 @@
             </Grid.ColumnDefinitions>
 
             <!--Левая часть-->
-            <StackPanel Orientation="Vertical" Grid.Column="0">
+            <StackPanel Orientation="Vertical" Grid.Column="0" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
                     <Label
                     Style="{StaticResource Lable_Style}"
@@ -41,7 +41,9 @@
                     Height="50"
                     Margin="0 0 0 0"
                     HorizontalAlignment="Left"
-                    Content="Название">
+                    Content="Название"
+                    FontSize="25"
+                    HorizontalContentAlignment="Center">
                     </Label>
                     <TextBox x:Name="tb_name"
                          Width="200"
@@ -50,72 +52,46 @@
                          Style="{StaticResource TextBox_Style}">
                     </TextBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 15 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <Label
                     Style="{StaticResource Lable_Style}"
                     Width="200"
                     Height="50"
                     Margin="0 0 0 0"
                     HorizontalAlignment="Left"
-                    Content="Цена">
+                    Content="ISBN"
+                    FontSize="25"
+                    HorizontalContentAlignment="Center">
                     </Label>
-                    <TextBox x:Name="tb_price"
+                    <TextBox x:Name="tb_ISBN"
                          Width="200"
                          Margin="0 0 0 0"
                          HorizontalAlignment="Right"
                          Style="{StaticResource TextBox_Style}">
                     </TextBox>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 20 0 0">
                     <Label
                     Style="{StaticResource Lable_Style}"
                     Width="200"
                     Height="50"
                     Margin="0 0 0 0"
                     HorizontalAlignment="Left"
-                    Content="Кол-во дней">
+                    Content="Кол-во страниц"
+                    FontSize="25"
+                    HorizontalContentAlignment="Center">
                     </Label>
-                    <TextBox x:Name="tb_count_days"
+                    <TextBox x:Name="tb_count_pages"
                          Width="200"
                          Margin="0 0 0 0"
                          HorizontalAlignment="Right"
                          Style="{StaticResource TextBox_Style}">
                     </TextBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                    <Label
-                    Style="{StaticResource Lable_Style}"
-                    Width="200"
-                    Height="50"
-                    Margin="0 0 0 0"
-                    HorizontalAlignment="Left"
-                    Content="Дата отбытия">
-                    </Label>
-                    <DatePicker x:Name="dp_date_out"
-                         Width="200"
-                         Margin="0 0 0 0"
-                         HorizontalAlignment="Right">
-                    </DatePicker>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                    <Label
-                    Style="{StaticResource Lable_Style}"
-                    Width="200"
-                    Height="50"
-                    Margin="0 0 0 0"
-                    HorizontalAlignment="Left"
-                    Content="Дата отбытия">
-                    </Label>
-                    <DatePicker x:Name="dp_date_in"
-                         Width="200"
-                         Margin="0 0 0 0"
-                         HorizontalAlignment="Right">
-                    </DatePicker>
                 </StackPanel>
             </StackPanel>
 
             <!--Правая часть-->
-            <StackPanel Orientation="Vertical" Grid.Column="1">
+            <StackPanel Orientation="Vertical" Grid.Column="1" VerticalAlignment="Center">
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
                     <Label
                     Style="{StaticResource Lable_Style}"
@@ -123,15 +99,17 @@
                     Height="50"
                     Margin="0 0 0 0"
                     HorizontalAlignment="Left"
-                    Content="Тип тура">
+                    Content="Жанр"
+                    FontSize="25"
+                    HorizontalContentAlignment="Center">
                     </Label>
-                    <ComboBox x:Name="cb_type_tour"
-                         Width="200"
+                    <ComboBox x:Name="cb_genre"
+                         Width="250"
                          Margin="0 0 0 0"
                          HorizontalAlignment="Right"
                          Style="{StaticResource ComboBox_Style}"
-                         ItemsSource="{Binding Типы_туров}"
-                         DisplayMemberPath="Название">
+                         ItemsSource="{Binding Genres}"
+                         DisplayMemberPath="Name">
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
@@ -141,15 +119,17 @@
                     Height="50"
                     Margin="0 0 0 0"
                     HorizontalAlignment="Left"
-                    Content="Страна">
+                    Content="Издательство"
+                    FontSize="25"
+                    HorizontalContentAlignment="Center">
                     </Label>
-                    <ComboBox x:Name="cb_country"
-                         Width="200"
+                    <ComboBox x:Name="cb_publication"
+                         Width="250"
                          Margin="0 0 0 0"
                          HorizontalAlignment="Right"
                          Style="{StaticResource ComboBox_Style}"
-                         ItemsSource="{Binding Страны}"
-                         DisplayMemberPath="Название">
+                         ItemsSource="{Binding Publications}"
+                         DisplayMemberPath="Name">
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
@@ -159,57 +139,28 @@
                     Height="50"
                     Margin="0 0 0 0"
                     HorizontalAlignment="Left"
-                    Content="Тип маршрута">
+                    Content="Авторы"
+                    FontSize="25"
+                    HorizontalContentAlignment="Center">
                     </Label>
-                    <ComboBox x:Name="cb_type_marshroot"
-                         Width="200"
-                         Margin="0 0 0 0"
-                         HorizontalAlignment="Right"
-                         Style="{StaticResource ComboBox_Style}"
-                         ItemsSource="{Binding Маршруты}"
-                         DisplayMemberPath="Количество_остановок">
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                    <Label
-                    Style="{StaticResource Lable_Style}"
-                    Width="200"
-                    Height="50"
-                    Margin="0 0 0 0"
-                    HorizontalAlignment="Left"
-                    Content="Тип питания">
-                    </Label>
-                    <ComboBox x:Name="cb_eating"
-                         Width="200"
-                         Margin="0 0 0 0"
-                         HorizontalAlignment="Right"
-                         Style="{StaticResource ComboBox_Style}"
-                         ItemsSource="{Binding Типы_питания}"
-                         DisplayMemberPath="Название">
-                    </ComboBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
-                    <Label
-                    Style="{StaticResource Lable_Style}"
-                    Width="200"
-                    Height="50"
-                    Margin="0 0 0 0"
-                    HorizontalAlignment="Left"
-                    Content="Скидка">
-                    </Label>
-                    <ComboBox x:Name="cb_discount"
-                         Width="200"
-                         Margin="0 0 0 0"
-                         HorizontalAlignment="Right"
-                         Style="{StaticResource ComboBox_Style}"
-                         ItemsSource="{Binding Скидки}"
-                         DisplayMemberPath="Название">
-                    </ComboBox>
+                    <Button x:Name="bt_add_author" Margin="20 0 0 0"
+                    Style="{StaticResource Button_Style}"
+                    Content="Добавить автора"
+                    Click="Go_To_Add_Authors"/>
                 </StackPanel>
             </StackPanel>
         </Grid>
         
         <!--Кнопки-->
-        
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="bt_go_back" Margin="20 0 0 0"
+                Style="{StaticResource Button_Style}"
+                Content="Назад"
+                Click="Go_Back"/>
+            <Button x:Name="bt_add_book" Margin="20 0 0 0"
+                Style="{StaticResource Button_Style}"
+                Content="Добавить"
+                />
+        </StackPanel>
     </Grid>
 </Page>

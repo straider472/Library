@@ -24,7 +24,21 @@ namespace Library.Pages
         {
             InitializeComponent();
             //Вывод данных из бд в комбобоксы
+            cb_genre.ItemsSource = Model.LibraryEntities.GetContext().Genres.ToList();
+            cb_publication.ItemsSource = Model.LibraryEntities.GetContext().Publications.ToList();
+        }
 
+        //Возвращение на форму с книгами
+        private void Go_Back(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GoBack();
+        }
+
+        //Открытие модального окна с авторами
+        private void Go_To_Add_Authors(object sender, RoutedEventArgs e)
+        {
+            var window = new Windows.Add_Authors_To_Book();
+            window.ShowDialog();
         }
     }
 }

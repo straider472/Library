@@ -1,0 +1,48 @@
+﻿<Window x:Class="Library.Windows.Add_Authors_To_Book"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Library.Windows"
+        mc:Ignorable="d"
+        Title="Добавление автора книги" Height="400" Width="400">
+    <Grid>
+        <!--Верстка модального окна-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <!--Лист с авторами-->
+        <DataGrid x:Name="dt_authors"
+                  Style="{StaticResource DataGrid_Style}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Автор"
+                                    HeaderStyle="{StaticResource DataGridColumnHeader_Style}"
+                                    Binding="{Binding Fio}">    
+                </DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Checked="Check_Author" Unchecked="Uncheck_Author"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>  
+        </DataGrid>
+        
+        <!--Кнопки для управления-->
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="bt_go_back" Margin="20 0 0 0"
+                Style="{StaticResource Button_Style}"
+                Content="Назад"
+                Width="150"
+                Click="Go_Back"/>
+            <Button x:Name="bt_add_author_book" Margin="20 0 0 0"
+                Style="{StaticResource Button_Style}"
+                Content="Добавить"
+                Width="150"
+                Click="Bt_Add_Author_Book"/>
+        </StackPanel>
+    </Grid>
+</Window>
