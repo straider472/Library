@@ -94,5 +94,18 @@
                 <Setter Property="Margin" Value="0"></Setter>
             </Style.Setters>
         </Style>
+        <!--Комбобоксы-->
+        <Style x:Key="ComboBox_Style" TargetType="ComboBox">
+            <Style.Setters>
+                <Setter Property="Width" Value="200"></Setter>
+                <Setter Property="Height" Value="50"></Setter>
+                <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
+                <Setter Property="FontFamily" Value="Comic Sans"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontWeight" Value="Bold"></Setter>
+                <Setter Property="Background" Value="White"></Setter>
+                <Setter Property="SelectedIndex" Value="0"></Setter>
+            </Style.Setters>
+        </Style>
     </Application.Resources>
 </Application>

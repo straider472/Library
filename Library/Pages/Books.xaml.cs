@@ -28,5 +28,27 @@ namespace Library.Pages
             dt_books.ItemsSource = Model.LibraryEntities.GetContext().Books.ToList();
 
         }
+
+        //Удаление книги из таблицы
+        private void Bt_Delete_Book(object sender, RoutedEventArgs e)
+        {
+            var book = dt_books.SelectedItem as Model.Books;
+            if (MessageBox.Show("Вы точно хотите удалить?", "", MessageBoxButton.YesNo, MessageBoxImage.Warning)
+                == MessageBoxResult.Yes)
+            {
+                var delete_book = Model.LibraryEntities.GetContext().Books.FirstOrDefault(i =>
+                                    i.Id_Book == book.Id_Book);
+                Model.LibraryEntities.GetContext().Books.Remove(delete_book);
+                Model.LibraryEntities.GetContext().SaveChanges();
+                MessageBox.Show("Книга была успешно удалена!");
+            }
+            dt_books.ItemsSource = Model.LibraryEntities.GetContext().Books.ToList();
+        }
+
+        //Переход на страницу с добавление новой книги
+        private void Bt_Add_Book(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Add_Book());
+        }
     }
 }

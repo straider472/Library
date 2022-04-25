@@ -34,5 +34,11 @@ namespace Library.Windows
         {
             main_frame.Navigate(new Pages.Books());
         }
+
+        //Переход к заказам
+        private void Go_To_Orders(object sender, RoutedEventArgs e)
+        {
+            main_frame.Navigate(new Pages.Orders());
+        }
     }
 }

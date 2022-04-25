@@ -21,7 +21,8 @@
         <StackPanel Orientation="Horizontal" Grid.Row="0" HorizontalAlignment="Center">
             <Button x:Name="bt_orders"
                 Style="{StaticResource Button_Style}"
-                Content="Заказы"/>
+                Content="Заказы"
+                Click="Go_To_Orders"/>
             <Button x:Name="bt_readers"
                 Style="{StaticResource Button_Style}"
                 Content="Читатели"/>
@@ -35,7 +36,7 @@
         </StackPanel>
         
         <!--Фрейм для страниц-->
-        <Frame x:Name="main_frame" Grid.Row="1"></Frame>
+        <Frame x:Name="main_frame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
         
         <!--Техническая информация-->
         <TextBlock x:Name="tb_current_user" Grid.Row="2"

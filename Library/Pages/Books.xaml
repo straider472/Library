@@ -43,7 +43,7 @@
                             <Button x:Name="bt_delete"
                                     Style="{StaticResource Button_Style_Data_Grid}"
                                     Width="30" Height="30"
-                                    >
+                                    Click="Bt_Delete_Book">
                                 <Button.Content>
                                     <Image Source="/Resources/trash_basket.png"></Image>
                                 </Button.Content>
@@ -55,8 +55,15 @@
         </DataGrid>
         
         <!---Кнопки для управления-->
-        <StackPanel Grid.Row="2" Orientation="Horizontal">
-            
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button x:Name="bt_add_book" Margin="20 0 0 0"
+                Style="{StaticResource Button_Style}"
+                Content="Добавить"
+                Click="Bt_Add_Book"/>
+            <Button x:Name="bt_update_book" Margin="20 0 0 0"
+                Style="{StaticResource Button_Style}"
+                Content="Изменить"
+                />
         </StackPanel>
     </Grid>
 </Page>

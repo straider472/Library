@@ -13,21 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Library
+namespace Library.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Orders.xaml
+    /// Логика взаимодействия для Add_Book.xaml
     /// </summary>
-    public partial class Orders : Page
+    public partial class Add_Book : Page
     {
-        public Orders()
+        public Add_Book()
         {
             InitializeComponent();
-            //Привязка данных
-            dt_orders.ItemsSource = Model.LibraryEntities.GetContext().Orders.ToList();
-            var order = new Model.Orders();
-            var order_lines = new Model.Orders_Lines();
-            
+            //Вывод данных из бд в комбобоксы
+
         }
     }
 }
