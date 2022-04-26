@@ -1,4 +1,4 @@
-﻿<Page x:Class="Library.Pages.Books"
+﻿<Page x:Class="Library.Pages.Add_Order"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,20 +9,33 @@
       Title="">
 
     <Grid>
-        <!---Верстка страницы-->
+        <!--Верстка страницы-->
         <Grid.RowDefinitions>
-            <RowDefinition Height="50*"></RowDefinition>
-            <RowDefinition Height="350*"></RowDefinition>
+            <RowDefinition Height="100*"></RowDefinition>
+            <RowDefinition Height="300*"></RowDefinition>
             <RowDefinition Height="100*"></RowDefinition>
         </Grid.RowDefinitions>
-        
-        <!--Строка поиска-->
-        
-        
+
+        <!--Заголовок-->
+        <Label x:Name="title"
+               Grid.Row="0" Grid.Column="0"
+               Style="{StaticResource Lable_Style}"
+               FontSize="30"
+               Content="Формирование заказа">
+        </Label>
+
         <!--Таблица книг-->
         <DataGrid x:Name="dt_books" Grid.Row="1"
                   Style="{StaticResource DataGrid_Style}">
             <DataGrid.Columns>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox Checked="Delete_Book"
+                                      Unchecked="Delete_Book"></CheckBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTextColumn Header="Название" Binding="{Binding Name}"
                                     HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
                 <DataGridTextColumn Header="Жанр" Binding="{Binding Genres.Name}"
@@ -37,33 +50,32 @@
                                     HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
                 <DataGridTextColumn Header="ISBN" Binding="{Binding ISBN}"
                                     HeaderStyle="{StaticResource DataGridColumnHeader_Style}" FontSize="14"></DataGridTextColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button x:Name="bt_delete"
-                                    Style="{StaticResource Button_Style_Data_Grid}"
-                                    Width="30" Height="30"
-                                    Click="Bt_Delete_Book">
-                                <Button.Content>
-                                    <Image Source="/Resources/trash_basket.png"></Image>
-                                </Button.Content>
-                            </Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         
-        <!---Кнопки для управления-->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
-            <Button x:Name="bt_add_book" Margin="20 0 0 0"
-                Style="{StaticResource Button_Style}"
-                Content="Добавить"
-                Click="Bt_Add_Book"/>
-            <Button x:Name="bt_update_book" Margin="20 0 0 0"
-                Style="{StaticResource Button_Style}"
-                Content="Изменить"
-                />
+        <!--Кнопки для управления-->
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <Label x:Name="title_count_books"
+               Grid.Row="0" Grid.Column="0"
+               Style="{StaticResource Lable_Style}"
+               FontSize="25"
+               Content="Количество книг"
+               VerticalContentAlignment="Center">
+                </Label>
+                <Label x:Name="count_books"
+               Grid.Row="0" Grid.Column="0"
+               Style="{StaticResource Lable_Style}"
+               FontSize="25"
+               Content="0"
+               VerticalContentAlignment="Center"
+               Foreground="Red"
+               Margin="20 0 0 0">
+                </Label>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

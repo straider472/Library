@@ -63,7 +63,8 @@
             <Button x:Name="add_orders" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Сформировать"
-                Margin="20 0 0 0"/>
+                Margin="20 0 0 0"
+                Click="Add_Order_Click"/>
             <Button x:Name="bt_update" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Изменить"

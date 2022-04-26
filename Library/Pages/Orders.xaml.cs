@@ -50,5 +50,11 @@ namespace Library.Pages
             }
             dt_orders.ItemsSource = Model.LibraryEntities.GetContext().Orders.ToList();
         }
+
+        //Переход к странице добавления нового заказа
+        private void Add_Order_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Pages.Add_Order());
+        }
     }
 }

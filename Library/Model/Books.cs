@@ -28,6 +28,8 @@ namespace Library.Model
         public int Id_Publication { get; set; }
         public Nullable<int> Count_Pages { get; set; }
         public bool Status { get; set; }
+        //Описание статуса
+        public string Text_Status { get { return Status == true ? "В наличии" : "Занята"; } set { } }
     
         public virtual Genres Genres { get; set; }
         public virtual Publications Publications { get; set; }
@@ -35,6 +37,7 @@ namespace Library.Model
         public virtual ICollection<Orders_Lines> Orders_Lines { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Authors> Authors { get; set; }
+        //Все авторы в одной строке
         public string Current_Authors
         {
             get
