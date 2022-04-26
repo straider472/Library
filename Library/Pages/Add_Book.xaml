@@ -160,7 +160,7 @@
             <Button x:Name="bt_add_book" Margin="20 0 0 0"
                 Style="{StaticResource Button_Style}"
                 Content="Добавить"
-                />
+                Click="Add_Book_Click"/>
         </StackPanel>
     </Grid>
 </Page>

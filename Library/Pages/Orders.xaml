@@ -63,11 +63,11 @@
             <Button x:Name="add_orders" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Сформировать"
-                />
+                Margin="20 0 0 0"/>
             <Button x:Name="bt_update" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Изменить"
-                />
+                Margin="20 0 0 0"/>
         </StackPanel>
     </Grid>
 </Page>

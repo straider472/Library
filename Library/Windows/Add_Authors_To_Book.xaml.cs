@@ -33,12 +33,23 @@ namespace Library.Windows
         private void Bt_Add_Author_Book(object sender, RoutedEventArgs e)
         {
             //Заглушка
-            string s = "";
-            foreach (var item in current_authors)
+            string message = "Были выбраны следующие авторы:\n";
+            if (current_authors.Count > 0)
             {
-                s += $"{item.Middle_Name}\n";
+                foreach (var item in current_authors)
+                {
+                    string last_name = item.Last_Name != null ? item.Last_Name.Trim() : "";
+                    message += $"{item.First_Name.Trim()} {last_name} {item.Middle_Name.Trim()}\n";
+                }
+                MessageBox.Show(message);
+                //Передача списка авторов
+                Pages.Add_Book.current_authors = current_authors;
+                Close();
             }
-            MessageBox.Show(s);
+            else
+            {
+                MessageBox.Show("Выберите хотя бы одного автора!", "", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         //Выбор автора
