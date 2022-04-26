@@ -52,5 +52,11 @@ namespace Library.Windows
                 Close();
             }
         }
+
+        //Переход к читателям
+        private void Go_To_Readers(object sender, RoutedEventArgs e)
+        {
+            main_frame.Navigate(new Pages.Readers());
+        }
     }
 }

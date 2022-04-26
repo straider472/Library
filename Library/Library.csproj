@@ -118,11 +118,17 @@
     <Compile Include="Pages\Add_Order.xaml.cs">
       <DependentUpon>Add_Order.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\Add_Reader.xaml.cs">
+      <DependentUpon>Add_Reader.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Books.xaml.cs">
       <DependentUpon>Books.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Orders.xaml.cs">
       <DependentUpon>Orders.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Readers.xaml.cs">
+      <DependentUpon>Readers.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Add_Authors_To_Book.xaml.cs">
       <DependentUpon>Add_Authors_To_Book.xaml</DependentUpon>
@@ -153,11 +159,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Add_Reader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Books.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Orders.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\Readers.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

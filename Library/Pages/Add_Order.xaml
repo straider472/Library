@@ -82,16 +82,16 @@
                          DisplayMemberPath="Fio">
             </ComboBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <Button x:Name="add_orders" Grid.Row="1"
+                <Button x:Name="add_go_back" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Назад"
                 Margin="20 0 0 0"
-                Click="Create_Order"/>
-                <Button x:Name="bt_update" Grid.Row="1"
+                Click="Go_Back"/>
+                <Button x:Name="bt_add_orders" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Сформировать"
                 Margin="20 0 0 0"
-                Click="Go_Back"/>
+                Click="Create_Order"/>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -17,8 +17,15 @@
         </Grid.RowDefinitions>
         
         <!--Строка поиска-->
-        
-        
+        <TextBox x:Name="tb_search_string"
+                         Width="200"
+                         Margin="0 0 0 0"
+                         HorizontalAlignment="Right"
+                         Foreground="Gray"
+                         Text="Введите название"
+                         Style="{StaticResource TextBox_Style}">
+        </TextBox>
+
         <!--Таблица книг-->
         <DataGrid x:Name="dt_books" Grid.Row="1"
                   Style="{StaticResource DataGrid_Style}">
