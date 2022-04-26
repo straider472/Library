@@ -26,7 +26,16 @@ namespace Library.Model
         public string Last_Name { get; set; }
         public string Number { get; set; }
         public string Mail { get; set; }
-    
+        public string Fio
+        {
+            get
+            {
+                string last_name = Last_Name != null ? Last_Name.Trim() : "";
+                return $"{First_Name.Trim()} {Middle_Name.Trim()} {last_name}";
+            }
+            set { }
+        }
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Orders> Orders { get; set; }
     }

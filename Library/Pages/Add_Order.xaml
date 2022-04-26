@@ -79,17 +79,19 @@
                          HorizontalAlignment="Right"
                          Style="{StaticResource ComboBox_Style}"
                          ItemsSource="{Binding Readers}"
-                         DisplayMemberPath="Name">
+                         DisplayMemberPath="Fio">
             </ComboBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                 <Button x:Name="add_orders" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Назад"
-                Margin="20 0 0 0"/>
+                Margin="20 0 0 0"
+                Click="Create_Order"/>
                 <Button x:Name="bt_update" Grid.Row="1"
                 Style="{StaticResource Button_Style}"
                 Content="Сформировать"
-                Margin="20 0 0 0"/>
+                Margin="20 0 0 0"
+                Click="Go_Back"/>
             </StackPanel>
         </StackPanel>
     </Grid>

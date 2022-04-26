@@ -23,15 +23,7 @@ namespace Library.Model
         public int Id_Author { get; set; }
         public string First_Name { get; set; }
         public string Middle_Name { get; set; }
-        public string Last_Name { get; set; }
-        public string Fio { 
-            get 
-            {
-                string last_name = Last_Name != null ? Last_Name.Trim() : "";
-                return $"{First_Name.Trim()} {last_name} {Middle_Name.Trim()}";
-            }
-            set { } }
-    
+        public string Last_Name { get; set; }   
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Books> Books { get; set; }
     }
