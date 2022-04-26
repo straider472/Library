@@ -31,7 +31,7 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <CheckBox Checked="Delete_Book"
+                            <CheckBox Checked="Select_Book"
                                       Unchecked="Delete_Book"></CheckBox>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -70,11 +70,26 @@
                Content="0"
                VerticalContentAlignment="Center"
                Foreground="Red"
-               Margin="20 0 0 0">
+               Margin="20 0 20 0">
                 </Label>
             </StackPanel>
+            <ComboBox x:Name="cb_readers"
+                         Width="250"
+                         Margin="0 0 0 0"
+                         HorizontalAlignment="Right"
+                         Style="{StaticResource ComboBox_Style}"
+                         ItemsSource="{Binding Readers}"
+                         DisplayMemberPath="Name">
+            </ComboBox>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                
+                <Button x:Name="add_orders" Grid.Row="1"
+                Style="{StaticResource Button_Style}"
+                Content="Назад"
+                Margin="20 0 0 0"/>
+                <Button x:Name="bt_update" Grid.Row="1"
+                Style="{StaticResource Button_Style}"
+                Content="Сформировать"
+                Margin="20 0 0 0"/>
             </StackPanel>
         </StackPanel>
     </Grid>
