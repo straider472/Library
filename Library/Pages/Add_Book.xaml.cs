@@ -78,7 +78,7 @@ namespace Library.Pages
                 Model.LibraryEntities.GetContext().Books.Add(book);
                 Model.LibraryEntities.GetContext().SaveChanges();
                 MessageBox.Show("Книга была успешно добавлена!");
-                NavigationService.GoBack();
+                NavigationService.Navigate(new Pages.Books());
             }
             else
             {

@@ -42,8 +42,14 @@ namespace Library.Pages
             if (MessageBox.Show("Вы точно хотите удалить?", "", MessageBoxButton.YesNo, MessageBoxImage.Warning)
                 == MessageBoxResult.Yes)
             {
+                //Заказ для удаления
                 var delete_order = Model.LibraryEntities.GetContext().Orders.FirstOrDefault(i =>
                                     i.Id_Order == order.Id_Order);
+                //Строки заказа для удаления
+                foreach (var item in delete_order.Orders_Lines.ToList())
+                {
+                    Model.LibraryEntities.GetContext().Orders_Lines.Remove(item);
+                }
                 Model.LibraryEntities.GetContext().Orders.Remove(delete_order);
                 Model.LibraryEntities.GetContext().SaveChanges();
                 MessageBox.Show("Заказ был успешно удалён!");

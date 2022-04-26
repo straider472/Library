@@ -39,10 +39,29 @@
         <Frame x:Name="main_frame" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
         
         <!--Техническая информация-->
-        <TextBlock x:Name="tb_current_user" Grid.Row="2"
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <TextBlock x:Name="tb_current_user"
                        Style="{StaticResource TextBlock_Style}"
                        FontSize="20"
                        Width="Auto">
         </TextBlock>
+        <Button x:Name="bt_logout"
+                Background="White"
+                Width="200"
+                Height="50"
+                Margin="20 0 0 0"
+                Click="Exit_Click">
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Выйти"
+                               Style="{StaticResource Lable_Style}"
+                               FontSize="30"
+                               VerticalContentAlignment="Center">
+                        </Label>
+                        <Image Source="/Resources/exit_door.png"></Image>
+                    </StackPanel>
+                </Button.Content>   
+        </Button>
+        </StackPanel>
     </Grid>
 </Window>

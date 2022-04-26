@@ -40,5 +40,17 @@ namespace Library.Windows
         {
             main_frame.Navigate(new Pages.Orders());
         }
+
+        //Кнопка выхода из аккаунта
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Вы точно хотите выйти?\nВсе несохраненные данные будут потеряны!",
+                "", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                var Window = new MainWindow();
+                Window.Show();
+                Close();
+            }
+        }
     }
 }
